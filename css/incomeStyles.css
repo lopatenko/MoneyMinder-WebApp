@@ -1,0 +1,325 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.header {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.widget {
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    flex-shrink: 0;
+}
+.widget p {
+    margin: 0;
+    font-size: 14px;
+}
+.widget img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+.widget.time {
+    margin-left: auto;
+    padding-right: 20px;
+}
+.widget.currency {
+    margin-right: auto;
+    flex-direction: column;
+    text-align: right;
+    padding-left: 50px;
+}
+.widget.currency p {
+    display: flex;
+    align-items: center;
+}
+
+.header .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.header .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.header .avatar .username {
+    font-size: 16px;
+}
+
+.main-content {
+    display: flex;
+    padding: 20px;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+    margin-top: 80px; /* Offset for fixed header */
+}
+
+.left-sidebar, .main-content-area {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left-sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    position: fixed;
+    top: 80px; /* Positioned under header */
+    left: 0;
+    height: calc(100% - 80px); /* Account for header height */
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.left-sidebar.closed {
+    left: -250px;
+}
+
+.left-sidebar h3 {
+    margin-top: 0;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.left-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-sidebar li {
+    margin-bottom: 10px;
+}
+
+.left-sidebar a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+}
+
+.left-sidebar a:hover {
+    background-color: #cccccc;
+}
+
+.main-content-area {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    margin-left: 270px;
+    min-width: 300px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content-area.expanded {
+    margin-left: 270px;
+}
+
+.main-content-area.collapsed {
+    margin-left: 20px;
+}
+
+.main-content-area h2 {
+    margin-top: 0;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.balance-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.balance-card h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.balance-card p {
+    margin: 10px 0 0;
+    font-size: 20px;
+    color: #000;
+}
+
+.income-form, .income-list {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+}
+
+.income-form h2, .income-list h2 {
+    text-align: center;
+    width: 100%; /* Set width to 100% for centering */
+}
+
+.income-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.income-form form input, .income-form form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 80%; /* Set uniform width for all input fields */
+    max-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Ensure box-sizing is used for proper width calculation */
+}
+
+.income-form form button {
+    background-color: #d3d3d3;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.income-form form button:hover {
+    background-color: #a9a9a9;
+}
+
+.income-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.income-list table, th, td {
+    border: 1px solid #ccc;
+}
+
+.income-list th, .income-list td {
+    padding: 10px;
+    text-align: left;
+    color: #000;
+}
+
+.income-list th {
+    background-color: #d3d3d3;
+    color: #000;
+}
+
+.tips {
+    margin-top: 40px; /* Increase the distance from the income table */
+}
+
+.tips h2 {
+    text-align: center;
+}
+
+.tips ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tips li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tips li:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    background-color: #d3d3d3;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+
+.footer .social-icons a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #333;
+}
+
+.menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #333;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .income-form, .income-list {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #455e4b; /* Фон */
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: #f1f6f4; /* Фон контейнера */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333; /* Цвет текста заголовка */
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #cccccc; /* Цвет рамки полей ввода */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0 5px; /* Увеличиваем верхний отступ до 20px */
+  border: none;
+  background-color: #302c2a; /* Цвет кнопок */
+  color: #ffffff; /* Цвет текста кнопок */
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 17px;
+}
+button:hover {
+  background-color: #5c8288; /* Цвет кнопок при наведении */
+}
+.separator {
+  margin: 20px 0;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex-grow: 1;
+  background-color: #7d7599; /* Цвет разделителей */
+  height: 1px;
+}
+.or {
+  padding: 0 10px;
+  color: #7d7599; /* Цвет текста разделителя */
+}
+.google-button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  background-color: #302c2a; /* Цвет кнопки Google */
+  color: #ffffff; /* Цвет текста кнопки Google */
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 17px;
+}
+.google-button:hover {
+  background-color: #37474f; /* Цвет кнопки Google при наведении */
+}
+.signup {
+  text-align: center;
+  margin-top: 20px;
+  color: #333333; /* Цвет текста ссылки */
+}
+.terms {
+  text-align: center;
+  font-size: 13px;
+  color: #666666; /* Цвет текста дополнительной информации */
+}
